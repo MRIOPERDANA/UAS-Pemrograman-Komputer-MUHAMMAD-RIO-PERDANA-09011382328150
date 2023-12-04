@@ -1,0 +1,42 @@
+// Seorang pelanggan sedang berbelanja di sebuah toko online. Terdapat sebuah barang dengan harga tertentu dan diskon berdasarkan jumlah pembelian. Implementasikan program Java untuk menghitung total harga yang harus dibayar oleh pelanggan.
+
+Jika pelanggan membeli barang dengan jumlah kurang dari 5, tidak ada diskon.Jika pelanggan membeli barang antara 5 hingga 10, berikan diskon 5%.Jika pelanggan membeli barang antara 11 hingga 20, berikan diskon 10%.Jika pelanggan membeli barang lebih dari 20, berikan diskon 20%.
+
+
+
+
+
+
+import java.util.Scanner;
+
+public class Soal1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Masukkan harga barang: ");
+        double hargaBarang = scanner.nextDouble();
+
+        System.out.print("Masukkan jumlah pembelian: ");
+        int jumlahPembelian = scanner.nextInt();
+
+        double totalHarga = 0;
+
+        // Menghitung total harga dengan memperhitungkan diskon
+        if (jumlahPembelian < 5) {
+            totalHarga = hargaBarang * jumlahPembelian;
+        } else if (jumlahPembelian >= 5 && jumlahPembelian <= 10) {
+            double diskon = 0.05; // 5%
+            totalHarga = (hargaBarang * jumlahPembelian) * (1 - diskon);
+        } else if (jumlahPembelian >= 11 && jumlahPembelian <= 20) {
+            double diskon = 0.1; // 10%
+            totalHarga = (hargaBarang * jumlahPembelian) * (1 - diskon);
+        } else {
+            double diskon = 0.2; // 20%
+            totalHarga = (hargaBarang * jumlahPembelian) * (1 - diskon);
+        }
+
+        System.out.println("Total harga yang harus dibayar: " + totalHarga);
+
+        scanner.close();
+    }
+}
