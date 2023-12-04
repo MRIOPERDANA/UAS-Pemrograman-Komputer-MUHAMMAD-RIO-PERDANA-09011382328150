@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Soal2 {
+    public static void main(String[] args) {
+        // Menentukan username dan password yang valid
+        String usernameValid = "rio";
+        String passwordValid = "perdana";
+
+        // Meminta input username dan password dari pengguna
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan username: ");
+        String usernameInput = input.next();
+        System.out.print("Masukkan password: ");
+        String passwordInput = input.next();
+
+        // Memeriksa apakah input sesuai dengan nilai yang ditentukan
+        if (usernameInput.equals(usernameValid) & passwordInput.equals(passwordValid)) {
+            System.out.println("Autentikasi Berhasil");
+        } else {
+            System.out.println("Autentikasi Gagal");
+        }
+        input.close();
+    }
+}
