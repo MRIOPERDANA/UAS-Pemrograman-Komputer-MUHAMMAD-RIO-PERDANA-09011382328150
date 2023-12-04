@@ -1,42 +1,43 @@
+import java.util.Scanner;
 public class Soal8 {
     private String username;
-    public String password;
+    private String password;
     private boolean isActive;
-
-    public void UserAccount(String username, String password) {
+    public Soal8(String username, String password) {
         this.username = username;
         this.password = password;
-        this.isActive = true;  // Default: akun dianggap aktif saat dibuat
+        this.isActive = true; // Saat membuat akun baru, secara default dianggap aktif
     }
-
     public void activateAccount() {
-        isActive = true;
-        System.out.println("Akun " + username + " telah diaktifkan.");
+        this.isActive = true;
+        System.out.println("Akun " + this.username + password+ " telah diaktifkan.");
     }
-
     public void deactivateAccount() {
-        isActive = false;
-        System.out.println("Akun " + username +  " telah dinonaktifkan.");
+        this.isActive = false;
+        System.out.println("Akun " + this.username + " telah dinonaktifkan.");
     }
-
-    public String getUsername() {
-        return username;
-    }
-
     public boolean isActive() {
         return isActive;
     }
-
+    public String getUsername() {
+        return username;
+    }
     public static void main(String[] args) {
-        // Contoh penggunaan
-       String user1 = "Rio";
-        System.out.println("Status akun " + user1 + ": Aktif" );
+        Scanner scanner = new Scanner(System.in);
 
-      
-        System.out.println("Status akun setelah dinonaktifkan: nonaktif" );
+        System.out.print("Masukkan username: rio perdana");
+        String inputUsername = scanner.nextLine();
+
+        System.out.print("Masukkan password: rio123");
+        String inputPassword = scanner.nextLine();
+
+        Soal8 user1 = new Soal8(inputUsername, inputPassword);
+
+        System.out.println("Status akun " + user1.getUsername() + ": Aktif = " + user1.isActive());
+
+        user1.deactivateAccount();
         
-     
-        System.out.println("Status akun setelah diaktifkan kembali: Aktif" );
-        
+        System.out.println("Status akun " + user1.getUsername() + ": Aktif = " + user1.isActive());
+        scanner.close();
     }
 }
